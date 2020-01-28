@@ -7,7 +7,7 @@ def classifyTriangle(a,b,c):
         elif a == b or b == c or a == c:
             return "Isoceles Triangle"
         else:
-            if max(a,b,c)**2 == ((a + b + c) - max(a,b,c) - min(a,b,c)) ** 2 + min(a,b,c) ** 2:
+            if max(a,b,c) ** 2 == ((a + b + c) - max(a,b,c) - min(a,b,c)) ** 2 + min(a,b,c) ** 2:
                 return 'Right Triangle'
             else:
                 return "Scalene Triangle"  
