@@ -18,29 +18,35 @@ def printClassifyTriangle(a,b,c):
     print('classifyTriangle(',a, ',', b, ',', c, ')= ' + classifyTriangle(a,b,c))
 
 class TestTriangles(unittest.TestCase):
-    def testNotATriangle(self):
+    def test_NotATriangle(self):
+        """ test not a triangle detection """
         self.assertEqual(classifyTriangle(3,3,7), 'Not A Triangle')
         self.assertEqual(classifyTriangle(3,0,7), 'Not A Triangle')
         self.assertNotEqual(classifyTriangle(3,3,3), "Not A Triangle")
 
 
-    def testEquilateral(self):  
+    def test_Equilateral(self):
+        """ test equilateral triangle detection """  
         self.assertEqual(classifyTriangle(3,3,3), 'Equilateral Triangle')
         self.assertNotEqual(classifyTriangle(3,4,3), 'Equilateral Triangle')  
 
-    def testIsoceles(self):
+    def test_Isoceles(self):
+        """ test isoceles triangle detection """
         self.assertEqual(classifyTriangle(3,5,5), 'Isoceles Triangle')
         self.assertNotEqual(classifyTriangle(3,4,5), 'Isoceles Triangle')
 
-    def testScalene(self):
+    def test_Scalene(self):
+        """ test scalene triangle detection """
         self.assertEqual(classifyTriangle(3,4,6), 'Scalene Triangle')
         self.assertNotEqual(classifyTriangle(3,4,5), 'Scalene Triangle')
         
-    def testRight(self):
+    def test_Right(self):
+        """ test rest triangle detection """
         self.assertEqual(classifyTriangle(3,4,5), 'Right Triangle')
         self.assertNotEqual(classifyTriangle(6,10,6), 'Right Triangle')
 
 if __name__ == '__main__':
+    unittest.main(exit=False, verbosity=2)
 
     printClassifyTriangle(6,10,6)
     printClassifyTriangle(1,3,0)
